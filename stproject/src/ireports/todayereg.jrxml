@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e591efc5-514e-46cf-9ef8-47eca2710376">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="date" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     reg_patient.`PID` AS PID,
+     reg_patient.`reg_date` As reg_date,
+     reg_patient.`fname` AS fname,
+     reg_patient.`lname` AS lname,
+     reg_patient.`gender` AS gender,
+     reg_patient.`dob` AS dob,
+     reg_patient.`age` AS age,
+     reg_patient.`m_states` AS m_states,
+     reg_patient.`b_group` AS b_group,
+     reg_patient.`NIC` AS NIC,
+     reg_patient.`address` AS address,
+     reg_patient.`city` AS city,
+     reg_patient.`con_no` AS con_no,
+     reg_patient.`disease` AS disease,
+     reg_patient.`cname` AS cname,
+     reg_patient.`cNIC` AS cNIC,
+     reg_patient.`cnumber` AS cnumber
+FROM
+     `reg_patient` reg_patient
+Where
+     reg_patient.`reg_date` =$P{date}
+]]>
+	</queryString>
+	<field name="PID" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="reg_date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="lname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="gender" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dob" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="age" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="m_states" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="b_group" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NIC" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="address" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="city" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="con_no" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="disease" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cNIC" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cnumber" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="PID">
+		<groupExpression><![CDATA[$F{PID}]]></groupExpression>
+		<groupHeader>
+			<band height="40">
+				<textField>
+					<reportElement style="SubTitle" x="47" y="13" width="506" height="24" forecolor="#006600" uuid="fb879980-ff0a-4fa8-a882-0079318904ff"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{PID}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement mode="Opaque" x="0" y="13" width="36" height="24" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="a3e59f75-49cb-47fe-8f1e-73ea4247d42c"/>
+				</rectangle>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="275" y="0" width="300" height="64" uuid="ab78eb2c-e674-45e4-be96-d099c0459e13"/>
+				<imageExpression><![CDATA["leaf_banner_green.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="d297f137-5b33-41a1-9631-c6c579bc5a38"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Today Registered]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="100" y="46" width="174" height="22" uuid="a27a1a6f-111b-4a72-9f14-a1f7e4449023"/>
+				<text><![CDATA[Patient Details]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="1097931c-00bc-46c2-b9ca-9615d083bcca"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="34" height="15" uuid="a070cdda-cbff-47dd-babd-f82c078d1301"/>
+				<text><![CDATA[reg_date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="34" y="19" width="34" height="15" uuid="ad547f19-f580-48a9-bc20-3b1c7a29a70e"/>
+				<text><![CDATA[fname]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="68" y="19" width="34" height="15" uuid="e43419e8-f042-4d6a-bb42-ea9d96b91d8d"/>
+				<text><![CDATA[lname]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="102" y="19" width="34" height="15" uuid="3934576d-a839-4e98-85a4-864b19c5e4c0"/>
+				<text><![CDATA[gender]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="136" y="19" width="34" height="15" uuid="f262d515-2992-482b-bd38-5dd56e90d67a"/>
+				<text><![CDATA[dob]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="170" y="19" width="34" height="15" uuid="3b968e86-c4ab-4b75-9663-6fef26c01a5e"/>
+				<text><![CDATA[age]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="204" y="19" width="34" height="15" uuid="94961b05-702f-46ac-bf48-c437cbb4ce81"/>
+				<text><![CDATA[m_states]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="238" y="19" width="34" height="15" uuid="c7d93b98-41ce-4b33-a9d4-60918b5de3f8"/>
+				<text><![CDATA[b_group]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="272" y="19" width="34" height="15" uuid="2c4a26c9-a103-4189-8621-e0e37b4fd394"/>
+				<text><![CDATA[NIC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="306" y="19" width="34" height="15" uuid="d12932e1-edf6-44e8-a15d-0c584c599ed9"/>
+				<text><![CDATA[address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="340" y="19" width="34" height="15" uuid="1eb1a408-059d-48a0-aa28-2c0fc9c09489"/>
+				<text><![CDATA[city]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="374" y="19" width="34" height="15" uuid="63818687-18e1-4eef-bf80-cda4154524aa"/>
+				<text><![CDATA[con_no]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="408" y="19" width="34" height="15" uuid="d850d291-12ca-40d4-9d55-112028206449"/>
+				<text><![CDATA[disease]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="442" y="19" width="34" height="15" uuid="db2df413-55f7-4f5f-a329-266b62413ce3"/>
+				<text><![CDATA[cname]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="476" y="19" width="34" height="15" uuid="fdb58e69-03c8-4ec6-a639-2cb51a1334f5"/>
+				<text><![CDATA[cNIC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="510" y="19" width="34" height="15" uuid="811c1523-524d-4ec9-b285-4b10c4eea71e"/>
+				<text><![CDATA[cnumber]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="ec96192d-af77-44cc-a181-49efb0445c2f"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="34" height="15" uuid="83c8ecf4-78fb-4291-865f-0fd95554a563"/>
+				<textFieldExpression><![CDATA[$F{reg_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="34" y="0" width="34" height="15" uuid="fe1a85ff-d1ed-448d-8c26-50d99c8220d6"/>
+				<textFieldExpression><![CDATA[$F{fname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="68" y="0" width="34" height="15" uuid="40b5a80c-bb85-468e-bcda-ae9d69ac3354"/>
+				<textFieldExpression><![CDATA[$F{lname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="102" y="0" width="34" height="15" uuid="cc44a11c-c48b-4a8e-8c19-23d9e6de95a8"/>
+				<textFieldExpression><![CDATA[$F{gender}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="136" y="0" width="34" height="15" uuid="fabae15e-e48e-4e74-9124-617f03b7b480"/>
+				<textFieldExpression><![CDATA[$F{dob}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="170" y="0" width="34" height="15" uuid="b0c8016e-8ba4-4811-905d-b62a9c6e4d28"/>
+				<textFieldExpression><![CDATA[$F{age}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="204" y="0" width="34" height="15" uuid="378326c5-2205-4975-8bec-e6aca619d2fe"/>
+				<textFieldExpression><![CDATA[$F{m_states}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="238" y="0" width="34" height="15" uuid="bbd0ba5a-9482-48f7-92cb-4e1f076a02ef"/>
+				<textFieldExpression><![CDATA[$F{b_group}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="272" y="0" width="34" height="15" uuid="460b22d2-c5cd-45b5-bf40-88daf63b2ca1"/>
+				<textFieldExpression><![CDATA[$F{NIC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="306" y="0" width="34" height="15" uuid="f0b98869-b328-4171-8d66-9d3a575ff481"/>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="340" y="0" width="34" height="15" uuid="21c0b83f-1633-4d20-9d10-7a4a11833638"/>
+				<textFieldExpression><![CDATA[$F{city}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="374" y="0" width="34" height="15" uuid="ec494eb4-df5e-47e9-a3ce-fe12f472ada3"/>
+				<textFieldExpression><![CDATA[$F{con_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="408" y="0" width="34" height="15" uuid="3fe8f8be-611f-4bb9-ace7-a60cac21dc9c"/>
+				<textFieldExpression><![CDATA[$F{disease}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="442" y="0" width="34" height="15" uuid="3c2eb5ad-7efd-45d8-96c2-d46e8d50bbcd"/>
+				<textFieldExpression><![CDATA[$F{cname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="476" y="0" width="34" height="15" uuid="afa675b4-d7cb-43ec-b5b0-ffa84ea3ff18"/>
+				<textFieldExpression><![CDATA[$F{cNIC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="510" y="0" width="34" height="15" uuid="804d8b86-1d48-404c-b915-e6e2d504e7c9"/>
+				<textFieldExpression><![CDATA[$F{cnumber}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="82abe80f-74d7-4dff-8c20-47a4b54eab4b"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="3fbf649b-d185-402a-a47c-cb25ce53e981"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="ea88629d-38c3-466f-865d-afb0bdeb784e"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="4f83ad3b-60fb-45ed-8a5d-f605abc95871"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
